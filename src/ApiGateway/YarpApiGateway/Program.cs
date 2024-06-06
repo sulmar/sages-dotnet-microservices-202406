@@ -6,8 +6,6 @@ builder.Services.AddReverseProxy()
 
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello API Gateway!");
-
 app.MapReverseProxy();
 
 app.Run();

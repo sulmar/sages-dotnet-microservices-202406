@@ -34,4 +34,6 @@ app.MapGet("/", () => "Hello Catalog Api!");
 
 app.MapGet("api/products", async (IProductRepository repository) => Results.Ok(await repository.GetAllAsync()));
 
+app.MapGet("/ping", () => Results.Ok("pong"));
+
 app.Run();

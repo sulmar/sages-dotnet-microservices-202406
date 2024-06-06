@@ -1,3 +1,4 @@
+using ShoppingCart.Api;
 using ShoppingCart.Domain.Abstractions;
 using ShoppingCart.Domain.Entities;
 using ShoppingCart.Intrastructure;
@@ -44,6 +45,18 @@ internal class Program
             repository.Add(product);
 
             return Results.Ok();
+        });
+
+        app.MapPost("api/cart/submit", (CreateOrderRequest request, IShoppingCartRepository repository) => 
+        {
+            // TODO: Get cart from repository
+
+            // TODO: Map to CartDTO
+
+            // TODO: Publish to message broker by MassTransit
+
+            throw new NotImplementedException();
+        
         });
 
         app.Run();

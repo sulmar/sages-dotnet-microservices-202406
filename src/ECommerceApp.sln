@@ -9,23 +9,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MicroServices", "MicroServi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProductCatalog", "ProductCatalog", "{04BCA271-3B99-4493-942C-6EDE8F212703}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Api", "MicroServices\ProductCatalog\Catalog.Api\Catalog.Api.csproj", "{54F4724E-F527-421D-8D94-3339A1E20BAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Api", "MicroServices\ProductCatalog\Catalog.Api\Catalog.Api.csproj", "{54F4724E-F527-421D-8D94-3339A1E20BAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Domain", "MicroServices\ProductCatalog\Catalog.Domain\Catalog.Domain.csproj", "{B6E92261-DF93-4F97-8068-1274BF215529}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Domain", "MicroServices\ProductCatalog\Catalog.Domain\Catalog.Domain.csproj", "{B6E92261-DF93-4F97-8068-1274BF215529}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Infrastructure", "MicroServices\ProductCatalog\Catalog.Infrastructure\Catalog.Infrastructure.csproj", "{9179D97D-B9B5-4971-AFED-AB151C79B868}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Infrastructure", "MicroServices\ProductCatalog\Catalog.Infrastructure\Catalog.Infrastructure.csproj", "{9179D97D-B9B5-4971-AFED-AB151C79B868}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShoppingCart", "ShoppingCart", "{30FF53F5-2A83-4890-9C94-BEE126BC46B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingCart.Api", "MicroServices\ShoppingCart\ShoppingCart.Api\ShoppingCart.Api.csproj", "{74104952-113C-4B09-A487-2266C592B228}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingCart.Api", "MicroServices\ShoppingCart\ShoppingCart.Api\ShoppingCart.Api.csproj", "{74104952-113C-4B09-A487-2266C592B228}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingCart.Domain", "MicroServices\ShoppingCart\ShoppingCart.Domain\ShoppingCart.Domain.csproj", "{4DF0B263-F12B-4B1E-B8D0-5F9642E52982}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingCart.Domain", "MicroServices\ShoppingCart\ShoppingCart.Domain\ShoppingCart.Domain.csproj", "{4DF0B263-F12B-4B1E-B8D0-5F9642E52982}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingCart.Intrastructure", "MicroServices\ShoppingCart\ShoppingCart.Intrastructure\ShoppingCart.Intrastructure.csproj", "{820BCCFD-EA58-46E4-B67D-36CC8AB98EFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingCart.Intrastructure", "MicroServices\ShoppingCart\ShoppingCart.Intrastructure\ShoppingCart.Intrastructure.csproj", "{820BCCFD-EA58-46E4-B67D-36CC8AB98EFA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateway", "ApiGateway", "{F460FF71-AA49-49F5-B3FF-B47A25282502}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YarpApiGateway", "ApiGateway\YarpApiGateway\YarpApiGateway.csproj", "{1E6308A3-8768-46BB-8C24-4B96F104DF9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YarpApiGateway", "ApiGateway\YarpApiGateway\YarpApiGateway.csproj", "{1E6308A3-8768-46BB-8C24-4B96F104DF9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

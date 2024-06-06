@@ -27,6 +27,8 @@
 
 @code {
    
+    [Parameter, Required]
+    public int ProductId { get; set; }
     
     [Parameter, Required]
     public required string ProductName { get; set; }
@@ -45,7 +47,7 @@
         
         try
         {
-            Product product = new Product() { Name = ProductName, Price = ProductPrice };
+            Product product = new Product() { Id = ProductId, Name = ProductName, Price = ProductPrice };
             var response = await Http.PostAsJsonAsync("api/cart", product);
             if (response.IsSuccessStatusCode)
             {

@@ -16,9 +16,22 @@ internal class Program
             EndPoints = { "localhost:6379" }
         }));
 
+
         builder.Services.AddSingleton<Context>();
 
+        builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
+        {
+            // policy.AllowAnyOrigin();
+            policy.WithOrigins("https://localhost:7108");
+            policy.AllowAnyMethod();
+            policy.AllowAnyHeader();
+        }));
+
+
         var app = builder.Build();
+        
+        app.UseCors();
+
 
         app.MapGet("/", () => "Hello Shopping Cart!");
 

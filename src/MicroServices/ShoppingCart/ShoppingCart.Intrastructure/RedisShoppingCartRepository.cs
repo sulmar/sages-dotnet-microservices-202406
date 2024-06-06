@@ -14,8 +14,9 @@ public class RedisShoppingCartRepository(IConnectionMultiplexer _connectionMulti
         var userId = "123";
 
         string cartKey = $"cart:{userId}";
+        string field = $"product:{product.Id}";
 
-        db.HashIncrement(cartKey, product.Id, product.Quantity);
+        db.HashIncrement(cartKey, field, product.Quantity);
     }
 
     public void Clear()

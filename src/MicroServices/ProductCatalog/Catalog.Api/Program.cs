@@ -18,7 +18,17 @@ builder.Services.AddSingleton<Context>(_ =>
     return new Context { Products = products.ToDictionary(p => p.Id) };
 });
 
+builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
+{
+    // policy.AllowAnyOrigin();
+    policy.WithOrigins("https://localhost:7108");
+    policy.AllowAnyMethod();
+    policy.AllowAnyHeader();
+}));
+
 var app = builder.Build();
+
+app.UseCors();
 
 app.MapGet("/", () => "Hello Catalog Api!");
 

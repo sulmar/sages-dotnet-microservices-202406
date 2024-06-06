@@ -29,9 +29,11 @@ internal class Program
 
 
         var app = builder.Build();
-        
-        app.UseCors();
 
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseCors();
+        }
 
         app.MapGet("/", () => "Hello Shopping Cart!");
 

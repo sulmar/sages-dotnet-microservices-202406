@@ -16,17 +16,8 @@ public class FakeUserIdentityRepository(IPasswordHasher<UserIdentity> _passwordH
             Email = "marcin.sulecki@sulmar.pl"
         };
 
-        // TODO: zahashuj hasło!
         identity.HashedPassword = _passwordHasher.HashPassword(identity, "123");
 
         return Task.FromResult(identity);
-    }
-}
-
-public class FakeTokenService : ITokenService
-{
-    public string CreateAccessToken(UserIdentity identity)
-    {
-        return "your-jwt-token";
     }
 }

@@ -31,6 +31,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Models", "Shared\Sha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Messaging", "Shared\Shared.Messaging\Shared.Messaging.csproj", "{24A88E89-E45B-4707-93CA-A9C72A1FD3A8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ordering", "Ordering", "{85B66423-10AA-4EFE-A4A0-9BAC9FBB061F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.Api", "MicroServices\Ordering\Ordering.Api\Ordering.Api.csproj", "{4C37B9C0-0097-4959-AEF6-1C268A746AD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +81,10 @@ Global
 		{24A88E89-E45B-4707-93CA-A9C72A1FD3A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24A88E89-E45B-4707-93CA-A9C72A1FD3A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24A88E89-E45B-4707-93CA-A9C72A1FD3A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C37B9C0-0097-4959-AEF6-1C268A746AD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C37B9C0-0097-4959-AEF6-1C268A746AD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C37B9C0-0097-4959-AEF6-1C268A746AD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C37B9C0-0097-4959-AEF6-1C268A746AD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,6 +99,8 @@ Global
 		{4DF0B263-F12B-4B1E-B8D0-5F9642E52982} = {30FF53F5-2A83-4890-9C94-BEE126BC46B1}
 		{820BCCFD-EA58-46E4-B67D-36CC8AB98EFA} = {30FF53F5-2A83-4890-9C94-BEE126BC46B1}
 		{1E6308A3-8768-46BB-8C24-4B96F104DF9E} = {F460FF71-AA49-49F5-B3FF-B47A25282502}
+		{85B66423-10AA-4EFE-A4A0-9BAC9FBB061F} = {82A90913-E26D-42EE-A78C-256C8C22F227}
+		{4C37B9C0-0097-4959-AEF6-1C268A746AD4} = {85B66423-10AA-4EFE-A4A0-9BAC9FBB061F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {43365199-3D6A-4B05-A19A-A7D8D9EE9A94}

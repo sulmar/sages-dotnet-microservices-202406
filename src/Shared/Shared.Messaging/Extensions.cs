@@ -18,6 +18,8 @@ public static class Extensions
             var username = configuration["MessageBroker:UserName"];
             var password = configuration["MessageBroker:Password"];
 
+            x.AddConsumers(assembly);
+
             x.UsingRabbitMq((context, cfg) =>
             {
                 cfg.Host(host, host =>

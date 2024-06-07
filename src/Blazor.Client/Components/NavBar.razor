@@ -54,10 +54,23 @@
 
     
 
-    private void HandleButtonClick()
+    private async Task HandleButtonClick()
     {
         // Handle the button click event here
         cartCount++;
+
+        var response = await Http.PostAsync("api/cart/submit", null);
+
+        if (response.IsSuccessStatusCode)
+        {
+            // Optionally, update UI or provide feedback to user
+            Console.WriteLine("Cart submitted successfully.");
+        }
+        else
+        {
+            // Handle error (e.g., display error message to user)
+            Console.WriteLine("Error submit cart .");
+        }
     }
 
   

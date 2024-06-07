@@ -33,12 +33,20 @@ internal class Program
 
         builder.Services.AddMessageBroker(builder.Configuration, Assembly.GetExecutingAssembly());
 
+        builder.Services.AddAuthentication();
+        builder.Services.AddAuthorization();
+
+
         var app = builder.Build();
 
         if (app.Environment.IsDevelopment())
         {
             app.UseCors();
         }
+
+
+        app.UseAuthentication();
+        app.UseAuthorization();
 
         app.MapGet("/", () => "Hello Shopping Cart!");
 
@@ -51,8 +59,10 @@ internal class Program
             return Results.Ok();
         });
 
-        app.MapPost("api/cart/submit", async (IShoppingCartRepository repository, IPublishEndpoint endpoint) =>
+        app.MapPost("api/cart/submit", async (IShoppingCartRepository repository, IPublishEndpoint endpoint, HttpContext context) =>
         {
+            var emailClaim = context.User.Claims.FirstOrDefault(c => c.Type == "email");
+
             // TODO: Get cart from repository
 
             Product product1 = new Product { Id = 1, Name = "Product 1", Price = 1.90m };

@@ -26,12 +26,20 @@ builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
     policy.AllowAnyHeader();
 }));
 
+
+builder.Services.AddAuthentication();
+builder.Services.AddAuthorization();
+
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
     app.UseCors();
 }
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapGet("/", () => "Hello Catalog Api!");
 

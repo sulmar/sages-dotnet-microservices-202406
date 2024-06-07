@@ -17,13 +17,16 @@ app.MapGet("/", () => "Hello Auth.Api!");
 
 app.MapPost("api/login", async (LoginModel model,
     IAuthService authService,
-    ITokenService tokenService) =>
+    ITokenService tokenService,
+    HttpContext context) =>
 {
     var result = await authService.AuthorizeAsync(model.Username, model.Password);
 
     if (result.IsAuthorized)
     {
         var accessToken = tokenService.CreateAccessToken(result.Identity);
+
+        context.Response.Cookies.Append("jwt-token", accessToken, new CookieOptions { Expires = DateTime.UtcNow.AddMinutes(15) });
 
         return Results.Ok(accessToken);
     }

@@ -27,6 +27,15 @@ builder.Services.AddAuthentication(options =>
         ValidAudience = "http://domain.com"
     };
 
+    options.Events = new JwtBearerEvents
+    {
+        OnMessageReceived = context =>
+        {
+            context.Token = context.Request.Cookies["jwt-token"];
+            return Task.CompletedTask;
+        }
+    };
+
 
 });
 

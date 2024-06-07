@@ -28,6 +28,7 @@ public class JwtTokenService : ITokenService
         identity.AddClaim(new Claim("fn", userIdentity.FirstName));
         identity.AddClaim(new Claim("ln", userIdentity.LastName));
         identity.AddClaim(new Claim("email", userIdentity.Email));
+        identity.AddClaim(new Claim(ClaimTypes.Role, "vip"));
 
         var secretKey = "your-256-bit-secret-your-256-bit-secret-your-256-bit-secret-your-256-bit-secret-your-256-bit-secret-";
         var key = Encoding.ASCII.GetBytes(secretKey);

@@ -1,6 +1,8 @@
 using Catalog.Domain.Abstractions;
 using Catalog.Domain.Entities;
 using Catalog.Infrastructure;
+using HealthChecks.UI.Client;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton<IProductRepository, FakeProductRepository>();
@@ -30,6 +32,16 @@ builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
 builder.Services.AddAuthentication();
 builder.Services.AddAuthorization();
 
+// dotnet add package Microsoft.Extensions.Diagnostics.HealthChecks
+builder.Services.AddHealthChecks()
+    .AddCheck("Ping", () => HealthCheckResult.Healthy())
+    .AddCheck("Random", () =>
+    {
+        if (DateTime.Now.Minute % 2 == 0)
+            return HealthCheckResult.Healthy();
+        else
+            return HealthCheckResult.Unhealthy();
+    });
 
 var app = builder.Build();
 
@@ -45,6 +57,13 @@ app.MapGet("/", () => "Hello Catalog Api!");
 
 app.MapGet("api/products", async (IProductRepository repository) => Results.Ok(await repository.GetAllAsync()));
 
-app.MapGet("/ping", () => Results.Ok("pong"));
+app.MapGet("api/products/ping", () => Results.Ok("pong"));
+
+app.MapHealthChecks("api/products/hc", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions
+{
+    // dotnet add package AspNetCore.HealthChecks.UI.Client
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
+
 
 app.Run();

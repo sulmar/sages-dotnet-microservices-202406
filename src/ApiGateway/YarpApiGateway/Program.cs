@@ -54,11 +54,15 @@ builder.Services.AddAuthorization(options =>
 builder.Services.AddReverseProxy()
     .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
 
+
 var app = builder.Build();
+
 
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapReverseProxy();
+
+app.MapGet("/ping", () => Results.Ok("pong"));
 
 app.Run();

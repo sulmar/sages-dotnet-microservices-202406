@@ -6,6 +6,9 @@ using ShoppingCart.Intrastructure;
 using StackExchange.Redis;
 using Shared.Messaging;
 using System.Reflection;
+using HealthChecks.UI.Client;
+using RabbitMQ.Client;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 internal class Program
 {
@@ -36,6 +39,11 @@ internal class Program
         builder.Services.AddAuthentication();
         builder.Services.AddAuthorization();
 
+        var rabbitMQConnectionString = builder.Configuration.GetConnectionString("RabbitMQ");
+
+        builder.Services.AddHealthChecks()
+            .AddCheck("Ping", () => HealthCheckResult.Healthy())
+            .AddRabbitMQ(rabbitConnectionString: rabbitMQConnectionString, name: "RabbitMQ");
 
         var app = builder.Build();
 
@@ -83,6 +91,12 @@ internal class Program
 
             return Results.Accepted();
 
+        });
+
+        app.MapHealthChecks("api/cart/hc", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions
+        {
+            // dotnet add package AspNetCore.HealthChecks.UI.Client
+            ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
         });
 
         app.Run();

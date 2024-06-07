@@ -26,7 +26,12 @@ app.MapPost("api/login", async (LoginModel model,
     {
         var accessToken = tokenService.CreateAccessToken(result.Identity);
 
-        context.Response.Cookies.Append("jwt-token", accessToken, new CookieOptions { Expires = DateTime.UtcNow.AddMinutes(15) });
+        context.Response.Cookies.Append("jwt-token", accessToken, new CookieOptions
+        {
+            HttpOnly = true, // Zabezpieczenie przed dostêpem przez JavaScript (np. przez document.cookie)
+            Secure = true,   // Wymusza, aby plik cookie by³ wysy³any tylko przez bezpieczne po³¹czenia HTTPS.
+            Expires = DateTimeOffset.Now.AddMinutes(30), // Ustawia czas wygaœniêcia pliku cookie. Po up³ywie tego czasu plik cookie zostanie automatycznie usuniêty przez przegl¹darkê.
+        });
 
         return Results.Ok(accessToken);
     }

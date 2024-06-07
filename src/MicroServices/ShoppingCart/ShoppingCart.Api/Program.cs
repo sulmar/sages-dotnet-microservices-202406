@@ -1,8 +1,11 @@
-using ShoppingCart.Api;
+using MassTransit;
+using Shared.Models;
 using ShoppingCart.Domain.Abstractions;
 using ShoppingCart.Domain.Entities;
 using ShoppingCart.Intrastructure;
 using StackExchange.Redis;
+using Shared.Messaging;
+using System.Reflection;
 
 internal class Program
 {
@@ -28,6 +31,7 @@ internal class Program
             policy.AllowAnyHeader();
         }));
 
+        builder.Services.AddMessageBroker(builder.Configuration, Assembly.GetExecutingAssembly());
 
         var app = builder.Build();
 
@@ -47,16 +51,28 @@ internal class Program
             return Results.Ok();
         });
 
-        app.MapPost("api/cart/submit", (CreateOrderRequest request, IShoppingCartRepository repository) => 
+        app.MapPost("api/cart/submit", async (IShoppingCartRepository repository, IPublishEndpoint endpoint) =>
         {
             // TODO: Get cart from repository
 
-            // TODO: Map to CartDTO
+            Product product1 = new Product { Id = 1, Name = "Product 1", Price = 1.90m };
+            Product product2 = new Product { Id = 2, Name = "Product 2", Price = 2.90m };
 
-            // TODO: Publish to message broker by MassTransit
+            Cart cart = new Cart();
+            cart.Add(new CartItem { Product = product1, Quantity = 1 });
+            cart.Add(new CartItem { Product = product2, Quantity = 2 });
 
-            throw new NotImplementedException();
-        
+            var order = new OrderDTO();
+
+            order.Details = cart.Items.Select(p =>
+            new OrderDetail { ProductId = p.Product.Id, Quantity = p.Quantity });
+
+            var message = new SubmitOrder(order);
+
+            await endpoint.Publish(message);
+
+            return Results.Accepted();
+
         });
 
         app.Run();

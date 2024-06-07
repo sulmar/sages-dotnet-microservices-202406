@@ -27,6 +27,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateway", "ApiGateway", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YarpApiGateway", "ApiGateway\YarpApiGateway\YarpApiGateway.csproj", "{1E6308A3-8768-46BB-8C24-4B96F104DF9E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Models", "Shared\Shared.Models\Shared.Models.csproj", "{A2D9AA1D-B9AF-43A8-91BD-732A0C648D3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Messaging", "Shared\Shared.Messaging\Shared.Messaging.csproj", "{24A88E89-E45B-4707-93CA-A9C72A1FD3A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +69,14 @@ Global
 		{1E6308A3-8768-46BB-8C24-4B96F104DF9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E6308A3-8768-46BB-8C24-4B96F104DF9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E6308A3-8768-46BB-8C24-4B96F104DF9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2D9AA1D-B9AF-43A8-91BD-732A0C648D3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2D9AA1D-B9AF-43A8-91BD-732A0C648D3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2D9AA1D-B9AF-43A8-91BD-732A0C648D3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2D9AA1D-B9AF-43A8-91BD-732A0C648D3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24A88E89-E45B-4707-93CA-A9C72A1FD3A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24A88E89-E45B-4707-93CA-A9C72A1FD3A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24A88E89-E45B-4707-93CA-A9C72A1FD3A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24A88E89-E45B-4707-93CA-A9C72A1FD3A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

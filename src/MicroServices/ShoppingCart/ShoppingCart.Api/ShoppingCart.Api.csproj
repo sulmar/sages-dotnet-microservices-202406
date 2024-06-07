@@ -7,10 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MassTransit" Version="8.2.2" />
+    <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="7.3.1" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.2.2" />
     <PackageReference Include="StackExchange.Redis" Version="2.7.33" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Shared.Messaging\Shared.Messaging.csproj" />
+    <ProjectReference Include="..\..\..\Shared\Shared.Models\Shared.Models.csproj" />
     <ProjectReference Include="..\ShoppingCart.Domain\ShoppingCart.Domain.csproj" />
     <ProjectReference Include="..\ShoppingCart.Intrastructure\ShoppingCart.Intrastructure.csproj" />
   </ItemGroup>

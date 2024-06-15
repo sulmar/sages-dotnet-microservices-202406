@@ -26,7 +26,7 @@ app.MapPost("api/login", async (LoginModel model,
     {
         var accessToken = tokenService.CreateAccessToken(result.Identity);
 
-        context.Response.Cookies.Append("jwt-token", accessToken, new CookieOptions
+        context.Response.Cookies.Append("access-token", accessToken, new CookieOptions
         {
             HttpOnly = true, // Zabezpieczenie przed dostêpem przez JavaScript (np. przez document.cookie)
             Secure = true,   // Wymusza, aby plik cookie by³ wysy³any tylko przez bezpieczne po³¹czenia HTTPS.

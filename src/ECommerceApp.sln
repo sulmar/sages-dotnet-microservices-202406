@@ -27,21 +27,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateway", "ApiGateway", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YarpApiGateway", "ApiGateway\YarpApiGateway\YarpApiGateway.csproj", "{1E6308A3-8768-46BB-8C24-4B96F104DF9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Models", "Shared\Shared.Models\Shared.Models.csproj", "{A2D9AA1D-B9AF-43A8-91BD-732A0C648D3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Models", "Shared\Shared.Models\Shared.Models.csproj", "{A2D9AA1D-B9AF-43A8-91BD-732A0C648D3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Messaging", "Shared\Shared.Messaging\Shared.Messaging.csproj", "{24A88E89-E45B-4707-93CA-A9C72A1FD3A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Messaging", "Shared\Shared.Messaging\Shared.Messaging.csproj", "{24A88E89-E45B-4707-93CA-A9C72A1FD3A8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ordering", "Ordering", "{85B66423-10AA-4EFE-A4A0-9BAC9FBB061F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.Api", "MicroServices\Ordering\Ordering.Api\Ordering.Api.csproj", "{4C37B9C0-0097-4959-AEF6-1C268A746AD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.Api", "MicroServices\Ordering\Ordering.Api\Ordering.Api.csproj", "{4C37B9C0-0097-4959-AEF6-1C268A746AD4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityProvider", "IdentityProvider", "{1F81F680-BE25-401B-AB43-1774F7CCF844}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth.Api", "IdentityProvider\Auth.Api\Auth.Api.csproj", "{AF344155-3674-4C78-A604-C377BC94373B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth.Api", "IdentityProvider\Auth.Api\Auth.Api.csproj", "{AF344155-3674-4C78-A604-C377BC94373B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Monitoring", "Monitoring", "{B801AE74-C395-45CC-8F25-E6D5F0896FF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCheckMonitor", "Monitoring\HealthCheckMonitor\HealthCheckMonitor.csproj", "{FE03E202-ECF8-40BE-BA46-C5AC2AA486E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthCheckMonitor", "Monitoring\HealthCheckMonitor\HealthCheckMonitor.csproj", "{FE03E202-ECF8-40BE-BA46-C5AC2AA486E4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dashbord", "Dashbord", "{CF56E47B-704D-4F12-B2DE-9D276E9F9646}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard.Api", "MicroServices\Dashboard\Dashboard.Api\Dashboard.Api.csproj", "{A147B217-3363-47B8-8CEE-4DBBB7C5C112}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,6 +105,10 @@ Global
 		{FE03E202-ECF8-40BE-BA46-C5AC2AA486E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE03E202-ECF8-40BE-BA46-C5AC2AA486E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE03E202-ECF8-40BE-BA46-C5AC2AA486E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A147B217-3363-47B8-8CEE-4DBBB7C5C112}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A147B217-3363-47B8-8CEE-4DBBB7C5C112}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A147B217-3363-47B8-8CEE-4DBBB7C5C112}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A147B217-3363-47B8-8CEE-4DBBB7C5C112}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,6 +127,8 @@ Global
 		{4C37B9C0-0097-4959-AEF6-1C268A746AD4} = {85B66423-10AA-4EFE-A4A0-9BAC9FBB061F}
 		{AF344155-3674-4C78-A604-C377BC94373B} = {1F81F680-BE25-401B-AB43-1774F7CCF844}
 		{FE03E202-ECF8-40BE-BA46-C5AC2AA486E4} = {B801AE74-C395-45CC-8F25-E6D5F0896FF5}
+		{CF56E47B-704D-4F12-B2DE-9D276E9F9646} = {82A90913-E26D-42EE-A78C-256C8C22F227}
+		{A147B217-3363-47B8-8CEE-4DBBB7C5C112} = {CF56E47B-704D-4F12-B2DE-9D276E9F9646}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {43365199-3D6A-4B05-A19A-A7D8D9EE9A94}

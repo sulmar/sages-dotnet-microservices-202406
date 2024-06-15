@@ -31,7 +31,7 @@ builder.Services.AddAuthentication(options =>
     {
         OnMessageReceived = context =>
         {
-            context.Token = context.Request.Cookies["jwt-token"];
+            context.Token = context.Request.Cookies["access-token"];
             return Task.CompletedTask;
         }
     };
@@ -62,7 +62,5 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapReverseProxy();
-
-app.MapGet("/ping", () => Results.Ok("pong"));
 
 app.Run();

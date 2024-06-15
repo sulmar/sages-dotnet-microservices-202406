@@ -50,9 +50,6 @@ if (app.Environment.IsDevelopment())
     app.UseCors();
 }
 
-app.UseAuthentication();
-app.UseAuthorization();
-
 app.MapGet("/", () => "Hello Catalog Api!");
 
 app.MapGet("api/products", async (IProductRepository repository) => Results.Ok(await repository.GetAllAsync()));
